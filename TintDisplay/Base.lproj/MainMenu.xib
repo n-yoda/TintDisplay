@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="GzC-gU-4Uq"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="TintDisplay" customModuleProvider="target">
+            <connections>
+                <outlet property="appMenu" destination="Ess-6f-Odd" id="nZn-fR-Jdk"/>
+                <outlet property="color" destination="UGQ-wY-x3S" id="vYW-WZ-96f"/>
+                <outlet property="statusMenu" destination="K7X-en-y9F" id="mRh-Mh-jAl"/>
+                <outlet property="window" destination="QvC-M9-y7g" id="sAx-7F-xXG"/>
+            </connections>
+        </customObject>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <window title="TintDisplay" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="QvC-M9-y7g">
+            <windowStyleMask key="styleMask" titled="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="335" y="390" width="160" height="80"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <view key="contentView" id="EiT-Mj-1SZ">
+                <rect key="frame" x="0.0" y="0.0" width="160" height="80"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UGQ-wY-x3S">
+                        <rect key="frame" x="20" y="20" width="40" height="40"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <connections>
+                            <action selector="colorChanged:" target="Voe-Tx-rLC" id="Ayi-rB-w68"/>
+                        </connections>
+                    </colorWell>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aCq-so-vXI">
+                        <rect key="frame" x="62" y="22" width="84" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="fez-JV-y5T">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="okClicked:" target="Voe-Tx-rLC" id="c9j-BQ-nS9"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <point key="canvasLocation" x="109" y="258"/>
+        </window>
+        <menu id="Ess-6f-Odd" userLabel="App Menu">
+            <items>
+                <menuItem title="TintDisplay" id="aFp-JN-tvU" userLabel="Application">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="TintDisplay" id="Bwt-WR-uJI">
+                        <items>
+                            <menuItem title="Close Window" keyEquivalent="w" id="YPV-CH-aW3">
+                                <connections>
+                                    <action selector="hide:" target="-1" id="OXi-6X-1oh"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Quit Application" keyEquivalent="q" id="Z0c-MR-muA">
+                                <connections>
+                                    <action selector="terminate:" target="-1" id="33a-q6-VeA"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="-11" y="108"/>
+        </menu>
+        <menu id="K7X-en-y9F">
+            <items>
+                <menuItem title="Default" image="NSStatusNone" id="SJQ-5a-3hY">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="resetDefault:" target="Voe-Tx-rLC" id="hhm-8L-LRf"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Custom" image="NSStatusPartiallyAvailable" id="dXU-nz-FBo">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="applyCustom:" target="Voe-Tx-rLC" id="MFH-BB-XS0"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Edit Custom" image="NSActionTemplate" id="dId-qR-n11">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="editCustom:" target="Voe-Tx-rLC" id="0WI-Bm-Jez"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="260" y="108"/>
+        </menu>
+    </objects>
+    <resources>
+        <image name="NSActionTemplate" width="14" height="14"/>
+        <image name="NSStatusNone" width="16" height="16"/>
+        <image name="NSStatusPartiallyAvailable" width="16" height="16"/>
+    </resources>
+</document>
